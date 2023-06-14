@@ -18,3 +18,16 @@ def prepareDataForShowingPicks(meeting):
     for date in dateRange(meeting.startDate, meeting.endDate+timedelta(1)):
         res[date] = Pick.objects.filter(date__date=date).filter(meeting=meeting).count()
     return res
+
+# Quick function to get number of gray squares to put before
+# the startDate
+def getOffset(meeting):
+    return meeting.startDate.weekday()
+# Function to get the number of gray squares after the
+# endDate of a given Meeting
+def getTrailingDays(meeting):
+    return 6-meeting.startDate.weekday()
+
+# Function that returns a list of weekdays
+def weekDays():
+    return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

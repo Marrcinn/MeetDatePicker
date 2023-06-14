@@ -2,6 +2,7 @@
 
 {% block head %}
 	{% load static %}
+	{% load meetFilters %}
 	<title>Meeting Details</title>
 	<link rel="stylesheet" href="{% static 'meetings/calendar.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,36 @@
 
 {%block content %}
 <p> Meeting name: {{name}} </p>
-{% for key, value in data.items %}
-	{{key}} : {{value}}
+<table>
+	<tr>
+	{% for day in days %}
+		<th> {{day}} </th>
+	{% endfor %}
+	</tr>
+	
+	<tr>
+		{% for i in before|django_range %}
+			<th> ee</th>
+		{% endfor %}
+	{% for  key, value in data.items %}
+		{% if key|eotw %}
+	
+	</tr>
+	<tr>
+		{% endif %}
+		<th>{{key}} : {{value}}</th>
+	{% endfor %}
+	{% for i in after|django_range %}
+	<th> ee </th>
+	{%endfor%}
+	</tr>
+	
+</table>
 
-{% endfor %}
+
+
+
+
 <div class="calendar">
         <div class="calendar-header">
             <span class="month-picker" id="month-picker">April</span>

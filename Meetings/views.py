@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, DetailView
 from .models import Meeting, Pick
-
+from . import prepare_data as pData
 from .prepare_data import prepareDataForShowingPicks 
 # Create your views here.
 
@@ -30,6 +30,9 @@ class MeetingDetails(DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["name"] = self.object.name
+        context["before"] = pData.getOffset(self.object)
+        context["after"] = pData.getTrailingDays(self.object)
         context["data"] = prepareDataForShowingPicks(self.object)
+        context['days'] = pData.weekDays()
         print(context["data"])
         return context
