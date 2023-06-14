@@ -1,6 +1,7 @@
-
 *.sqlite3
 db.*
 
 */pycharm/*
-
+.idea
+*/migrations
+*__pycache__
