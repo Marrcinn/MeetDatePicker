@@ -7,7 +7,11 @@
 {% block content %}
 Placeholder text for creating a meeting
 <form method="get">
-	{{form.as_p}}
+	<input id="name" type="text" name="name" value="Your meeting name!" />
+	<input id="passCode" type="text" name="passCode" value="Type in a passcode for the meeting" />
+	<input id="startDate" type="date" name="startDate"  />
+	<input id="endDate" type="date" name="endDate" />
+
 	<input type="submit" value="Create">
 </form>
 {% endblock %}
