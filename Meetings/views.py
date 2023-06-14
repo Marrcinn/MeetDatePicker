@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, DetailView
-from .models import Meeting
+from .models import Meeting, Pick
+
+from .prepare_data import prepareDataForShowingPicks 
 # Create your views here.
 
 # View for creating a Meeting
@@ -25,3 +27,9 @@ def newMeetingSubmit(request, name, passCode, startDate, endDate):
 class MeetingDetails(DetailView):
     model = Meeting
     template_name = "meetings/meeting_details.html"
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["name"] = self.object.name
+        context["data"] = prepareDataForShowingPicks(self.object)
+        print(context["data"])
+        return context
