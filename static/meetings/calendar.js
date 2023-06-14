@@ -1,7 +1,11 @@
 function changeState(buttonID) {
     // Get the button element
     var button = document.getElementById(buttonID);
-  
+    var id = buttonID.split('-')[1]
+    var checkBox = document.getElementById("chckBox"+id)
+    checkBox.checked = !checkBox.checked
+    console.log(id);
+
     // Get the current state from the button's data attribute
     var currentState = button.getAttribute('data-state');
   

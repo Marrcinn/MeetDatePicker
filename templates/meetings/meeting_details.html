@@ -12,6 +12,7 @@
 
 {% endblock %}
 {%block content %}
+<form method="get">
 <div class="MeetingName">
 <p>{{name}}</p>
 </div>
@@ -34,7 +35,8 @@
 	<tr>
 		{% endif %}
 		<th>
-        <button class="CalendarButtons"  data-state="one" id="btn{{forloop.counter}}" onclick="changeState(this.id)">
+            <input type="checkbox" id="chckBox{{forloop.counter}}" style="display: none;" name="chckBox{{forloop.counter}}" >
+        <button class="CalendarButtons"  type="button" data-state="one" id="btn-{{forloop.counter}}" onclick="changeState(this.id)">
 
             <p class="Date"> {{ key }} </p>
             <p class="BotData">Picks: {{ value }} </p>
@@ -50,4 +52,11 @@
 </div>
 	
 </table>
+</div>
+<p>
+What is your name?
+</p>
+<input id="userName" name="userName" type="text">
+<input type="submit" value="Add My Picks!">
+</form>
 {% endblock %}
