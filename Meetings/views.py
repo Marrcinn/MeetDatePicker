@@ -42,3 +42,12 @@ class MeetingDetails(DetailView):
             return redirect(reverse('meeting_details', args=[pk]))
         else:
             return super().get(request)
+
+class AccessMeetingView(TemplateView):
+    template_name = 'meetings/meeting_access.html'
+    def get(self,request):
+        if request.GET:
+            meeting = Meeting.objects.get(name=request.GET['name'], passCode=request.GET['passCode'])
+            return redirect(reverse('meeting_details', args=[meeting.ID]))
+        return super().get(request=request)
+        

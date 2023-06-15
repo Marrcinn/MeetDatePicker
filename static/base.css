@@ -2,4 +2,37 @@ html{
     background-color: #F2D7EE;
     color: #1C2321;
     height: 94vh;
+    justify-content: center;
+
 }
+body {
+  width: 100%;
+  margin:auto;
+  display: block;
+}
+.Topbar {
+    background-color: #333;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    margin: none;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+  }
+  
+a {
+    height: 100%;
+    width: auto;
+}
+
+  .logo {
+    
+    height:100%;
+  }
+  
+  .logo img {
+    display: block;
+    height: 50%;
+  }
+  

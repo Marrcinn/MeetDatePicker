@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
 {% block head %}
+{% load static %}
 <title>Meet Date Picker</title>
+<link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock head %}
 
 {% block content %}
-This will be a Home Page for Meet Date Picker :)
+<div class="HomeNavigation">
+
+    <a href="{% url 'create_meeting' %}"><button>Create a new Meeting</button></a>
+    <a href="{% url 'meeting_access' %}"><button>Access a meeting</button></a>
+</div>
 {% endblock %}
 

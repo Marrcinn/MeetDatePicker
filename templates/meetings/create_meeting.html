@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block head %}
+	{%load static%}
 	<title>Create Meeting</title>
+	<link rel="stylesheet" href="{% static 'meetings/create_meeting.css' %}">
 {% endblock %}
 
 {% block content %}
-Placeholder text for creating a meeting
 <form method="get">
-	<input id="name" type="text" name="name" value="Your meeting name!" />
-	<input id="passCode" type="text" name="passCode" value="Type in a passcode for the meeting" />
+	<input id="name" type="text" name="name" placeholder="Your meeting name!" />
+	<input id="passCode" type="text" name="passCode" placeholder="Type in a passcode for the meeting" />
 	<input id="startDate" type="date" name="startDate"  />
 	<input id="endDate" type="date" name="endDate" />
 
