@@ -26,7 +26,7 @@ def getOffset(meeting):
 # Function to get the number of gray squares after the
 # endDate of a given Meeting
 def getTrailingDays(meeting):
-    return 6-meeting.startDate.weekday()
+    return 6-meeting.endDate.weekday()
 
 # Function that returns a list of weekdays
 def weekDays():

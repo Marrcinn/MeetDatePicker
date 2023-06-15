@@ -31,6 +31,7 @@ class MeetingDetails(DetailView):
         context["name"] = self.object.name
         context["before"] = pData.getOffset(self.object)
         context["after"] = pData.getTrailingDays(self.object)
+        print(pData.getTrailingDays(self.object))
         context["data"] = prepareDataForShowingPicks(self.object)
         context['days'] = pData.weekDays()
         return context
