@@ -1,0 +1,41 @@
+.HomeNavigation {
+    background-color: azure;
+    width: 40%;
+    margin: 50px auto; /* Center the div horizontally and add margin from the top */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid purple;
+}
+
+.HomeNavigation a {
+    margin-bottom: 30px; /* Add some space between the buttons */
+    margin-top:30px;
+}
+
+.HomeNavigation button {
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .HomeNavigation button:hover {
+    background-color: #45a049;
+  }
+  
+  .HomeNavigation button:focus {
+    outline: none;
+  }
+  
+  .HomeNavigation button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+  }
+  
