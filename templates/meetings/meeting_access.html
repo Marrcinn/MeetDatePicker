@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{%load static%}
+	<title>Access Meeting</title>
+    <link rel="stylesheet" href="{% static 'meetings/meeting_access.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<form method="get">
+	<input id="name" type="text" name="name" placeholder="Your meeting name!" />
+	<input id="passCode" type="text" name="passCode" placeholder="Type in a passcode for the meeting" />
+	<input type="submit" value="Join">
+</form>
+{% endblock %}
+

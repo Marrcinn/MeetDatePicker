@@ -2,12 +2,19 @@
 <html>
 	<head>
 		<title> Meet Date Picker </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'base.css' %}">
 		{% block head %}
 		{% endblock head %}
 
 	</head>
 
 	<body>
+		<div class="Topbar">
+			<a href="{% url 'home' %}">
+				<img class="logo" src="{% static 'logo.png' %}" alt="Logo">
+			</a>
+		</div>
 		{% block content %}
 		{% endblock content %}
 	</body>

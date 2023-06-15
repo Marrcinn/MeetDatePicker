@@ -1,0 +1,83 @@
+.GrayedOut {
+    background-color: #797D81;
+
+}
+
+
+.CalendarTable{
+    background-color: #BBD8B3;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.TableDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.MeetingName {
+    font-size: 26px;
+    text-align: center;
+    color: #805D93;
+}
+
+tr{
+    height: 100px;
+}
+
+table, th, td {
+    border: 1px solid #805D93;
+}
+
+.TopRow {
+    background-color: #d9ead4;
+}
+.Date{
+    margin-bottom:30%;
+    margin-top: 0px;
+    color: #9b9ea1;
+}
+
+.BotData{
+    margin-top: 50%;
+    margin-bottom: 0px;
+}
+
+.CalendarButtons{
+    height: 100%;
+    width: 100%;
+    background-color:#BBD8B3;
+}
+
+p {
+    margin-bottom: 10px;
+  }
+  
+  .MeetingForm input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .MeetingForm input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .MeetingForm input[type="submit"]:hover {
+    background-color: #45a049;
+  }

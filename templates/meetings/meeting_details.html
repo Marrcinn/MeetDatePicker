@@ -1,10 +1,62 @@
 {% extends "base.html" %}
 
 {% block head %}
+	{% load static %}
+	{% load meetFilters %}
 	<title>Meeting Details</title>
+	<link rel="stylesheet" href="{% static 'meetings/calendar.css' %}">
+    <link rel="" href="{% static 'meetings/calendar.css' %}">
+    <script type="text/javascript" src="{% static 'meetings/calendar.js' %}"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {% endblock %}
-
 {%block content %}
-Hir will be content
+<form method="get" class="MeetingForm">
+<div class="MeetingName">
+<p>{{name}}</p>
+</div>
+<div class="TableDiv">
+<table class="CalendarTable">
+	<tr class="TopRow">
+	{% for day in days %}
+		<th class="TopRow"> {{day}} </th>
+	{% endfor %}
+	</tr>
+	
+	<tr>
+		{% for i in before|django_range %}
+			<th class="GrayedOut"></th>
+		{% endfor %}
+	{% for  key, value in data.items %}
+		{% if key|eotw %}
+	
+	</tr>
+	<tr>
+		{% endif %}
+		<th>
+            <input type="checkbox" id="chckBox{{forloop.counter}}" style="display: none;" name="chckBox{{forloop.counter}}" >
+        <button class="CalendarButtons"  type="button" data-state="one" id="btn-{{forloop.counter}}" onclick="changeState(this.id)">
+
+            <p class="Date"> {{ key }} </p>
+            <p class="BotData">Picks: {{ value }} </p>
+        </button>
+
+        </th>
+
+	{% endfor %}
+	{% for i in after|django_range %}
+	<th class="GrayedOut"></th>
+	{%endfor%}
+	</tr>
+</div>
+	
+</table>
+</div>
+<p>
+What is your name?
+</p>
+<input id="userName" name="userName" type="text">
+<input type="submit" value="Add My Picks!">
+</form>
 {% endblock %}
