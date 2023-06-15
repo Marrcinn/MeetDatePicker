@@ -3,7 +3,8 @@ from django.urls import reverse
 from django.views.generic import TemplateView, DetailView
 from .models import Meeting, Pick
 from . import prepare_data as pData
-from .prepare_data import prepareDataForShowingPicks 
+from .prepare_data import prepareDataForShowingPicks
+from .save_data import save_picks
 # Create your views here.
 
 # View for creating a Meeting
@@ -11,7 +12,6 @@ class MeetingCreateView(TemplateView):
     template_name = "meetings/create_meeting.html"
     def get(self, request):
         if request.GET:
-            print("SUIII")
             return redirect(reverse('meeting_submit', args=
                 [request.GET["name"], request.GET['passCode'], request.GET['startDate'], request.GET['endDate']]))
         else:
@@ -19,7 +19,6 @@ class MeetingCreateView(TemplateView):
 
 
 def newMeetingSubmit(request, name, passCode, startDate, endDate):
-    print("HEEEE")
     meeting = Meeting(name=name, passCode=passCode, startDate=startDate, endDate=endDate)
     meeting.save()
     return redirect(reverse('meeting_details', args=[meeting.ID]))
@@ -34,5 +33,11 @@ class MeetingDetails(DetailView):
         context["after"] = pData.getTrailingDays(self.object)
         context["data"] = prepareDataForShowingPicks(self.object)
         context['days'] = pData.weekDays()
-        print(context["data"])
         return context
+    
+    def get(self, request, pk):
+        if request.GET:
+            save_picks(request, pk)
+            return redirect(reverse('meeting_details', args=[pk]))
+        else:
+            return super().get(request)

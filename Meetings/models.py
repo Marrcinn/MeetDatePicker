@@ -13,7 +13,7 @@ class Meeting(models.Model):
     endDate = models.DateField()
 
 # Model representin user's pick - note that user should not be able
-# To make two picks with overlaping Hours on one meeting.
+# To make two picks with overlaping Hours on one meeting.
 class Pick(models.Model):
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)
     user = models.TextField()

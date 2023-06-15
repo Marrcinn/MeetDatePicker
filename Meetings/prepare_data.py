@@ -31,3 +31,9 @@ def getTrailingDays(meeting):
 # Function that returns a list of weekdays
 def weekDays():
     return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+def getStartDate(obj):
+    return obj.startDate
+
+def getBoxes(obj):
+    return int((obj.endDate-obj.startDate).days) + 1
