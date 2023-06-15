@@ -77,8 +77,6 @@ WSGI_APPLICATION = 'MeetDatePicker.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-print(os.getenv('SECRET_KEY'))
-print(os.environ)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
